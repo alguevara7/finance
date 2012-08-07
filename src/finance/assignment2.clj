@@ -11,7 +11,7 @@
   [c r n]
   (* c (reduce + 1 (for [k (range (- n 1) 0 -1)] (math/expt (+ 1 r) k)))))
 
-(defn fv-pmt
+(defn pmt-fv
   "calculates the 'cost or payment' of an annuity, given a 'future value'
    'fv' future value
    'r' interest rate
@@ -29,7 +29,7 @@
   [c r n]
   (* c (reduce + (for [k (range 1 (+ n 1))] (/ 1 (math/expt (+ 1 r) k))))))
 
-(defn pv-pmt
+(defn pmt-pv
   "calculates the 'cost or payment' of an annuity, given a 'present value'
    'pv' present value
    'r' interest rate
